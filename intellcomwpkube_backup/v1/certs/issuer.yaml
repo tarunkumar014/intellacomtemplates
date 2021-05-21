@@ -1,0 +1,18 @@
+apiVersion: cert-manager.io/v1
+kind: Issuer
+metadata:
+  name: digitalocean-dns-issuer2
+  namespace: intellapages
+spec:
+  acme:
+    email: tejad@lsnsoft.in
+    server: https://acme-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: digitalocean-dns-issuer2
+    solvers:
+    - dns01:
+        cnameStrategy: Follow
+        digitalocean:
+          tokenSecretRef:
+            name: dokeys-digitalocean
+            key: access-token

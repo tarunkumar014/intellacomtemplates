@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: dokeys-digitalocean
+data:
+  # insert your DO access token here
+  access-token: ZTEyM2VlZmQ5M2YxNjM0NGExZTY4OGVhYThhMTM4M2VmMTNiNjNmYTU3NTAyMGJiMjQxMTQyNWI1MGY5NzEzNA==

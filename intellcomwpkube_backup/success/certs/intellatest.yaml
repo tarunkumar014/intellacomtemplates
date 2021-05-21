@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: intellatest
+ # namespace: intellasphere
+  annotations:
+    kubernetes.io/ingress.class: dev-haproxy
+    ingress.kubernetes.io/forwarded-for: "true"
+    ingress.kubernetes.io/load-balance: "roundrobin"
+    ingress.kubernetes.io/request-set-header: X-Forwarded-Proto "https"
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+      - intellatest.4devlab.net
+    secretName: acme-intellatest-com-secret
+  rules:
+  - host: intellatest.4devlab.net
+    http:
+      paths:
+      -  backend:
+          serviceName: nginx
+          servicePort: 80

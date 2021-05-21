@@ -1,0 +1,191 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-gitlab-ssh-key
+data:
+  id_rsa: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+    QyNTUxOQAAACDoCneAzvkvVA4MMH5A0TA4V7u4+25zeF8gvzmiPo6o+QAAAJg50EzpOdBM
+    6QAAAAtzc2gtZWQyNTUxOQAAACDoCneAzvkvVA4MMH5A0TA4V7u4+25zeF8gvzmiPo6o+Q
+    AAAEAoVUYSd4scxUf0mnXTYBkrAGpG6e3lDQOTTXnHUTX7BOgKd4DO+S9UDgwwfkDRMDhX
+    u7j7bnN4XyC/OaI+jqj5AAAAEXRhcnVuQGxzbnNvZnQuY29tAQIDBA==
+    -----END OPENSSH PRIVATE KEY-----
+  known_hosts: |
+    |1|nnwsZshuA0BM3o9G2Pla1/vto5Q=|7kk7NvE0HNaffTPmA8XSLcYmB+4= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEYF0KGG2U7TWKZUV4/730IGprCroZRktl9Tl60rV7hr3K5xTYoVjijIWA8qLbz6HkbR/G4eu5t1heKOvOWS0jU=
+    |1|NJ5aAMdXRP1IknkxSbQA65wewg8=|g0f6k86HaeDyn4VpjoQkT+0Lrfk= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBEYF0KGG2U7TWKZUV4/730IGprCroZRktl9Tl60rV7hr3K5xTYoVjijIWA8qLbz6HkbR/G4eu5t1heKOvOWS0jU=
+#kubectl create configmap wordpress-gitlab-ssh-key --from-file=teja-gitlab-intellasphere  --from-file=known_hosts
+---
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: wordpress-nginx1
+  labels:
+    app: wordpress-nginx1
+
+spec:
+#  replicas: 3
+  selector:
+    matchLabels:
+      app: wordpress-nginx1
+
+  template:
+    metadata:
+      labels:
+        app: wordpress-nginx1
+
+    spec: 
+      restartPolicy: Always
+
+      imagePullSecrets:
+      - name: teja-azure-container-registry
+
+      containers:
+      - name: wordpress-fpm-alpine
+        image: intellasphere.azurecr.io/intellawp:v4
+
+        imagePullPolicy: Always
+
+        env:
+        - name: WORDPRESS_DB_HOST
+          value: "10.25.128.2"
+
+        - name: WORDPRESS_DB_USER
+          value: "intellacomwordpress"
+
+        - name: WORDPRESS_DB_PASSWORD
+          value: "oteo0buZooPei0ebeiphoo"
+
+        - name: WORDPRESS_DB_NAME
+          value: "intellacomwordpress"
+
+        - name: WORDPRESS_TABLE_PREFIX
+          value: "wp_"
+
+        - name: WORDPRESS_AUTH_KEY
+          value: "-N#h4L)4L(|iXj3jJdZ^}H]-ubXOEVtk^kp-[|HzmU||d8Y/xtY&iAa:zNIxbiO%"
+
+        - name: WORDPRESS_SECURE_AUTH_KEY
+          value: ";O8wAE=L5~x>8we2jX5Q;cp1_DYXJVLm1*W^6V3I<)9-^`j`.~@fode&o4*jS>&+"
+
+        - name: WORDPRESS_LOGGED_IN_KEY
+          value: "zb4w=B1gQ}Oe+9ZZ]3|68x9M(#q$?Q9hK*s~HF&Tqb5Za)M;eW_6<+szGGr~ss)="
+
+        - name: WORDPRESS_NONCE_KEY
+          value: "luYh>&051THe3@8XrJ}H4z xV]U/0$l~V>4rMJ-$mTw%}|EA~f>nP;G5F:].~{{+"
+
+        - name: WORDPRESS_AUTH_SALT
+          value: "`.1}wH>aCj4<V_9X^!G,yI2-lX5+i&+KsP&=&[Iz{2]?%R,2cdXSxQ{~/mT|;yb6"
+
+        - name: WORDPRESS_SECURE_AUTH_SALT
+          value: "r;Jg(E7!=H3K+@(k@ttC[D_(, gpN28ScU<,Ry-zz~-~!AWAnU7UQ,&c4jOMf(XD"
+
+        - name: WORDPRESS_LOGGED_IN_SALT
+          value: "iff66Kj<N_(FfGL8+)JK3t5-4B*xabfyj)-yyUJO%a J:1)O#$X2%/0ubv=;.p-c"
+
+        - name: WORDPRESS_NONCE_SALT
+          value: "2kTd+SKr@_<RJi$>,Q.7 $bav_3|oc<6VE?PNl|ZeqC$[lQ<HE)r0by5`X,7P?]e"
+
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: filestore-nfs-pvc1
+
+        - name: trusted-keys
+          mountPath: /root/.ssh/
+
+        - mountPath: /root/composermount
+          name: composerfile
+
+        resources:
+          requests:
+            cpu: 300m
+            memory: 200Mi
+#          limits:
+#            cpu: 1000m
+#            memory: 2000Mi
+
+        ports:
+        - containerPort: 9000
+
+#        startupProbe:
+#          tcpSocket:
+#            port: 9000
+#          successThreshold: 1
+#          failureThreshold: 30
+#          periodSeconds: 10
+
+#        livenessProbe:
+#          tcpSocket:
+#            port: 9000
+#          initialDelaySeconds: 5
+#          periodSeconds: 10
+
+#        readinessProbe:
+#          tcpSocket:
+#            port: 9000
+#          initialDelaySeconds: 5
+#          periodSeconds: 10
+
+      - name: nginx
+        image: intellasphere.azurecr.io/nginx:test1
+
+        imagePullPolicy: Always
+
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: filestore-nfs-pvc1
+
+        ports:
+        - containerPort: 80
+          name: http
+
+#        - containerPort: 443
+#          name: https
+
+#        startupProbe:
+#          httpGet:
+#            path: /
+#            port: http
+#            httpHeaders:
+#          successThreshold: 1
+#          failureThreshold: 30
+#          periodSeconds: 10
+
+#        livenessProbe:
+#          httpGet:
+#            path: /
+#            port: http
+#            httpHeaders:
+#          initialDelaySeconds: 3
+#          periodSeconds: 3
+
+#        readinessProbe:
+#          httpGet:
+#            path: /
+#            port: http
+#          initialDelaySeconds: 3
+#          periodSeconds: 3
+
+      volumes:
+      - name: filestore-nfs-pvc1
+        persistentVolumeClaim:
+          claimName: filestore-nfs-pvc1
+      - name: trusted-keys
+        configMap:
+          name: wordpress-gitlab-ssh-key
+          defaultMode: 0600
+          items:
+          - key: id_rsa
+            path: id_rsa
+          - key: known_hosts
+            path: known_hosts
+
+      - name: composerfile
+        configMap:
+          name: wordpress-multisite-composerfile
+          items:
+          - key: composer.json
+            path: composer.json

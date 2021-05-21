@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-digitalocean-issuer-crt
+  namespace: intellapages
+spec:
+  secretName: acme-intella-issuer-secret2
+  issuerRef:
+    name: digitalocean-dns-issuer2
+  #commonName: dev4lab.in
+  dnsNames:
+  - intella2.4devlab.net

@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-extraconfig
+data:
+  wordpres-extraconfig: |
+    /* w3 total cache */
+    define( 'WP_CACHE', true );
+    define('FS_METHOD','direct');
+
+    /* Multisite */
+
+    define( 'WP_ALLOW_MULTISITE', true );
+    define('MULTISITE', true);
+    define('SUBDOMAIN_INSTALL', true);
+    define('DOMAIN_CURRENT_SITE', 'intellapages.com');
+    define('PATH_CURRENT_SITE', '/');
+    define('SITE_ID_CURRENT_SITE', 1);
+    define('BLOG_ID_CURRENT_SITE', 1);
+    define('SUNRISE', true);
+
+    /* specifying digital ocean keys for s3-uploads */
+
+    define( 'S3_UPLOADS_BUCKET', 'landingpages');
+    define( 'S3_UPLOADS_KEY', 'WJDGSQREFG4OZXH74CUD');
+    define( 'S3_UPLOADS_SECRET', 'GsNv/B4UzqBx58j3vi3u0YnI8/X/gEwuBPlX3xElTVA');
+    //define( 'S3_UPLOADS_BUCKET_URL', 'https://landingpages.nyc3.digitaloceanspaces.com');
+    define( 'S3_UPLOADS_BUCKET_CDN_URL', 'https://landingpages.nyc3.cdn.digitaloceanspaces.com');
+    define( 'S3_UPLOADS_BUCKET_URL', 'https://landingpages.nyc3.digitaloceanspaces.com');
+    define( 'S3_UPLOADS_REGION', 'NYC3' );
+    define('S3_UPLOADS_OBJECT_ACL', 'public-read');
+
+    define("SITE_SETTINGS" ,'https://app.intellasphere.com');
+    define("SITE_SETTING_API" ,'https://api.intellasphere.com');
+
+    define('token',"eyJhbGciOiJSUzI1NiIsImtpZCI6IklVc1ZULXBzZTVsVVVaMFB5WEZLVlNabXMwS1JSeWtJSWNCTDh2MTBhb1kifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJpbnRlbGxhcGFnZXMiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoiaW50ZWxsYXBhZ2VzLWNlcnQtaW5ncmVzcy1hcGktdG9rZW4tangyczkiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiaW50ZWxsYXBhZ2VzLWNlcnQtaW5ncmVzcy1hcGkiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiI2OWIyYzk5ZC0wOWU3LTRiYzktYWE5Ny1lMDUzNmI2YmI5MmIiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6aW50ZWxsYXBhZ2VzOmludGVsbGFwYWdlcy1jZXJ0LWluZ3Jlc3MtYXBpIn0.me8zcX1KHIaWE8Cf18lfusF29X7S47XeyBfsoc4oTQqiraho_E54cpoubmZnsZ_9hr7R1dID23DdB7IYxOVlOjfVhYvLWcy1XTAgdvNltwJnoFSL5s-CYEjIgbYZFkEDVf525uUfvxSTfO9RUNoomkmcw9mkdvuUZmqT2YuKMovW8AP1O6zLcnckrX9lPwlRpXb9k3Yt1Jg2vX5Hd53Pp5sR0jDXxKwh_ODNPM8ZkPb4qHl405RiIlk6CbALHY7W3-Yj4SLEm2A7I7XK-pX3gHRjtMYmFP7gT_2xGnfqHw7p-rivVO0xw5wlAjY0bYBjrtFRKfAFYEycbc4yzVHwKg");
+    define('voyager' ,'https://83fe211d-4f33-4383-aa32-efd232e17ddf.k8s.ondigitalocean.com');
+    define('DISABLE_WP_CRON', true);

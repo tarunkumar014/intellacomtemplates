@@ -1,0 +1,579 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-multisite-composerfile
+data:
+  composer.json: |
+    {
+        "repositories": [      
+            {
+                "type": "package",
+                "package": {
+                    "name": "intellasphere/twentytwentyone",
+                    "type": "wordpress-theme",
+                    "version": "1.0.0",
+                    "source": {
+                        "type": "git",
+                        "url": "git@gitlab.intellasphere.com:intellasphere/twentytwentyone.git",
+                        "reference": "1.0.0"
+                }
+            }
+        }, 
+        {
+                "type": "package",
+                "package": {
+                    "name": "intellasphere/twentytwenty",
+                    "version": "1.0.0",
+                    "type": "wordpress-theme",
+                    "source": {
+                        "url": "git@gitlab.intellasphere.com:intellasphere/twentytwenty.git",
+                        "type": "git",
+                        "reference": "1.0.0"
+                }
+            }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/twentyseventeen",
+                "version": "1.0.0",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/twentyseventeen.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+               }
+           }
+        },
+        {
+              "type": "package",
+              "package": {
+                      "name": "intellasphere/twentynineteen",
+                      "version": "1.0.0",
+                      "type": "wordpress-theme",
+                      "source": {
+                             "url": "git@gitlab.intellasphere.com:intellasphere/twentynineteen.git",
+                             "type": "git",
+                             "reference": "1.0.0"
+                              }
+                           }
+        },
+        {
+    "type": "package",
+                "package": {
+                "name": "intellasphere/astra",
+                "version": "1.0.0",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/astra.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/isindia",
+                "version": "1.0.0",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/isindia.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                       }
+        },
+
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/wp-schema-pro",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/wp-schema-pro.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/wp-google-search",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/wp-google-search.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphereintellasphere/wordpress-importer",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/wordpress-importer.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphereintellasphere/woocommerce-gateway-stripe",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/woocommerce-gateway-stripe.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/woocommerce",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/woocommerce.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/woo-custom-emails-per-product",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/woo-custom-emails-per-product.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/web-stories",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/web-stories.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/sendgrid-email-delivery-simplified",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/sendgrid-email-delivery-simplified.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/rss-import",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/rss-import.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/reset-astra-customizer",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/reset-astra-customizer.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/product-import-export-for-woo",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/product-import-export-for-woo.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+         {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/ninja-forms",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/ninja-forms.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+         {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/mailchimp-for-woocommerce",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/mailchimp-for-woocommerce.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                 {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/intellasphere",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/intellasphere.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+         
+                          {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/imagify",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/imagify.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+                         {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/google-site-kit",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/google-site-kit.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/geoip-detect",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/geoip-detect.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/customizer-search",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/customizer-search.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/custom-typekit-fonts",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/custom-typekit-fonts.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/custom-fonts",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/custom-fonts.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/convertpro-addon",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/convertpro-addon.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/convertpro",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/convertpro.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/bookings-and-appointments-for-woocommerce",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/bookings-and-appointments-for-woocommerce.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/bb-ultimate-addon",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/bb-ultimate-addon.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/bb-plugin",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/bb-plugin.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/bb-is-reg-block",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/bb-is-reg-block.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellaspherewordpress/s3-uploads",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellaspherewordpress/s3-uploads.git,
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+ 
+
+                         {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/astra-widgets",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/astra-widgets.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/astra-import-export",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/astra-import-export.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                           {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/astra-bulk-edit",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/astra-bulk-edit.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                        {
+              "type": "package",
+              "package": {
+                "name": "intellasphere/astra-addon",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/astra-addon.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        },
+
+                      { 
+              "type": "package",
+              "package":{
+                "name": "intellasphere/kliken-marketing-for-google",
+                "version": "1.0.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:intellasphere/kliken-marketing-for-google.git",
+                       "type": "git",
+                       "reference": "1.0.0"
+                        }
+                     }
+        }
+
+    ],
+    "require": {
+      "composer/installers": "~1.0",
+            "intellasphere/astra":"1.0.0",
+            "intellasphere/twentynineteen":"1.0.0",
+            "intellasphere/twentyseventeen" : "1.0.0",
+            "intellasphere/twentytwenty": "1.0.0",
+            "intellasphere/twentytwentyone" :"1.0.0",
+            "intellaspherewordpress/s3-uploads" :"1.0.0",
+            "intellasphere/isindia":"1.0.0",
+            "intellasphere/wp-schema-pro":"1.0.0",
+            "intellasphere/wp-google-search":"1.0.0",
+            "intellasphere/wordpress-importer":"1.0.0",
+            "intellasphere/woocommerce-gateway-stripe":"1.0.0",
+            "intellasphere/woocommerce":"1.0.0",
+            "intellasphere/woo-custom-emails-per-product":"1.0.0",
+            "intellasphere/sendgrid-email-delivery-simplified":"1.0.0",
+            "intellasphere/web-stories":"1.0.0",
+            "intellasphere/rss-import":"1.0.0",
+            "intellasphere/reset-astra-customizer":"1.0.0",
+            "intellasphere/product-import-export-for-woo":"1.0.0",
+            "intellasphere/intellasphere":"1.0.0",
+            "intellasphere/google-site-kit":"1.0.0",
+            "intellasphere/geoip-detect":"1.0.0",
+            "intellasphere/customizer-search":"1.0.0",
+            "intellasphere/custom-typekit-fonts":"1.0.0",
+            "intellasphere/custom-fonts":"1.0.0",
+            "intellasphere/convertpro-addon":"1.0.0",
+            "intellasphere/convertpro":"1.0.0",
+            "intellasphere/bookings-and-appointments-for-woocommerce":"1.0.0",
+            "intellasphere/bb-ultimate-addon":"1.0.0",
+            "intellasphere/bb-plugin":"1.0.0",
+            "intellasphere/bb-is-reg-block":"1.0.0",
+            "intellasphere/astra-widgets":"1.0.0",
+            "intellasphere/astra-import-export":"1.0.0",
+            "intellasphere/astra-bulk-edit":"1.0.0",
+            "intellasphere/astra-addon":"1.0.0",
+            "intellasphere/imagify":"1.0.0",
+            "intellasphere/ninja-forms":"1.0.0",
+            "intellasphere/mailchimp-for-woocommerce":"1.0.0",
+            "intellasphere/kliken-marketing-for-google":"1.0.0"
+        },
+        "extra": {
+                "installer-paths": {
+                            "/var/www/html/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+                            "/var/www/html/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+                                   }
+                  }
+    }

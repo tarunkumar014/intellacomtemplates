@@ -1,0 +1,323 @@
+{
+    "repositories": [      
+        {
+            "type": "package",
+            "package": {
+                "name": "wordpressdata/bb-plugin",
+                "type": "wordpress-plugin",
+                "version": "2.3.2.3",
+                "source": {
+                    "type": "git",
+                     "url": "git@gitlab.intellasphere.com:wordpressdata/bb-plugin.git",
+                     "reference": "2.3.2.3"
+                }
+            }
+        }, 
+    		{
+       "type": "package",
+       "package": {
+               "name": "wordpressdata/ismultisites",
+               "version": "1.5.4.2",
+               "type": "wordpress-plugin",
+               "source": {
+                      "url": "git@gitlab.intellasphere.com:wordpressdata/ismultisites.git",
+                      "type": "git",
+                      "reference": "1.5.4.2"
+                         }
+                  }
+        },
+        {
+        "type": "package",
+        "package": {
+                "name": "wordpressdata/s3-uploads",
+                "version": "2.1.1",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/s3-uploads.git",
+                       "type": "git",
+                       "reference": "2.1.1"
+                          }
+                    }
+        },
+        {
+              "type": "package",
+              "package": {
+                      "name": "wordpressdata/amp",
+                      "version": "2.0.1",
+                      "type": "wordpress-plugin",
+                      "source": {
+                             "url": "git@gitlab.intellasphere.com:wordpressdata/amp.git",
+                             "type": "git",
+                             "reference": "2.0.1"
+                              }
+                           }
+        },
+			  {
+		"type": "package",
+                "package": {
+                "name": "wordpressdata/bb-theme",
+                "version": "1.7.3",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/bb-theme.git",
+                       "type": "git",
+                       "reference": "1.7.3"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/domain-mapping",
+                "version": "4.4.2.9",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/domain-mapping.git",
+                       "type": "git",
+                       "reference": "4.4.2.9"
+                        }
+                       }
+        },
+
+			  {
+	 	          "type": "package",
+              "package": {
+                "name": "wordpressdata/bb-theme-child",
+                "version": "1.1.8",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/bb-theme-child.git",
+                       "type": "git",
+                       "reference": "1.1.8"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra-child",
+                "version": "1.1.8",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra-child.git",
+                       "type": "git",
+                       "reference": "1.1.8"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra",
+                "version": "2.5.4",
+                "type": "wordpress-theme",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra.git",
+                       "type": "git",
+                       "reference": "2.5.4"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra-sites",
+                "version": "2.3.7",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra-sites.git",
+                       "type": "git",
+                       "reference": "2.3.7"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra-addon",
+                "version": "2.6.3",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra-addon",
+                       "type": "git",
+                       "reference": "2.6.3"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra-widgets",
+                "version": "1.2.7",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra-widgets",
+                       "type": "git",
+                       "reference": "1.2.7"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/astra-pro-sites",
+                "version": "2.3.5",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/astra-pro-sites",
+                       "type": "git",
+                       "reference": "2.3.5"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/bb-ultimate-addon",
+                "version": "1.28.4",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/bb-ultimate-addon",
+                       "type": "git",
+                       "reference": "1.28.4"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/woocommerce-cart-abandonment-recovery",
+                "version": "1.2.8",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/woocommerce-cart-abandonment-recovery",
+                       "type": "git",
+                       "reference": "1.2.8"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/cartflows",
+                "version": "1.5.16",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/cartflows",
+                       "type": "git",
+                       "reference": "1.5.16"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/woocommerce",
+                "version": "4.4.1",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/woocommerce",
+                       "type": "git",
+                       "reference": "4.4.1"
+                        }
+                     }
+        },
+        {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/defender-security",
+                "version": "2.3.1",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/defender-security",
+                       "type": "git",
+                       "reference": "2.3.1"
+                        }
+                     }
+        },
+         {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/wp-piwik",
+                "version": "1.0.23",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/wp-piwik",
+                       "type": "git",
+                       "reference": "1.0.23"
+                        }
+                     }
+        },
+         {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/ultimate-addons-for-gutenberg",
+                "version": "1.17.0",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/ultimate-addons-for-gutenberg",
+                       "type": "git",
+                       "reference": "1.17.0"
+                        }
+                     }
+        },
+         {
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/breeze",
+                "version": "1.1.7",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/breeze",
+                       "type": "git",
+                       "reference": "1.1.7"
+                        }
+                     }
+        },
+	{	
+              "type": "package",
+              "package": {
+                "name": "wordpressdata/a3-lazy-load",
+                "version": "2.4.1",
+                "type": "wordpress-plugin",
+                "source": {
+                       "url": "git@gitlab.intellasphere.com:wordpressdata/a3-lazy-load",
+                       "type": "git",
+                       "reference": "2.4.1"
+                        }
+                     }
+        }
+
+    ],
+    "require": {
+	    "composer/installers": "~1.0",
+            "wordpressdata/bb-theme":"1.7.3",
+            "wordpressdata/bb-theme-child":"1.1.8",
+            "wordpressdata/bb-plugin" : "2.3.2.3",
+            "wordpressdata/s3-uploads": "2.1.1",
+            "wordpressdata/amp" :"2.0.1",
+            "wordpressdata/ismultisites":"1.5.4.2",
+            "wordpressdata/domain-mapping":"4.4.2.9",
+            "wordpressdata/astra-child":"1.1.8",
+            "wordpressdata/astra":"2.5.4",
+            "wordpressdata/breeze":"1.1.7",
+            "wordpressdata/a3-lazy-load":"2.4.1",
+            "wordpressdata/astra-sites":"2.3.7",
+            "wordpressdata/astra-addon":"2.6.3",
+            "wordpressdata/astra-widgets":"1.2.7",
+            "wordpressdata/astra-pro-sites":"2.3.5",
+            "wordpressdata/bb-ultimate-addon":"1.28.4",
+            "wordpressdata/woocommerce-cart-abandonment-recovery":"1.2.8",
+            "wordpressdata/cartflows":"1.5.16",
+            "wordpressdata/woocommerce":"4.4.1",
+            "wordpressdata/wp-piwik":"1.0.23",
+            "wordpressdata/ultimate-addons-for-gutenberg":"1.17.0",
+	    "wordpressdata/defender-security":"2.3.1"		
+    },
+    "extra": {
+            "installer-paths": {
+                        "html/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+                        "html/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+                               }
+              }
+}

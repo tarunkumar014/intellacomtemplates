@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: intellapages-cert-ingress-api
+  namespace: intellapages
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: intellapages
+  name: intellapages-cert-ingress-api
+  labels:
+    app: intellapages
+rules:
+- apiGroups:
+  - "*"
+  resources:
+  - secrets
+  verbs:
+  - '*'
+- apiGroups:
+  - cert-manager.io/v1
+  resources:
+  - certificates
+  verbs:
+  - '*'
+- apiGroups:
+  - "*"
+  resources:
+  - ingresses
+  - certificates
+  verbs:
+  - '*'
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: intellapages-cert-ingress-api
+  namespace: intellapages
+subjects:
+- kind: ServiceAccount
+  name: intellapages-cert-ingress-api
+roleRef:
+  kind: Role 
+  name: intellapages-cert-ingress-api
+  apiGroup: rbac.authorization.k8s.io

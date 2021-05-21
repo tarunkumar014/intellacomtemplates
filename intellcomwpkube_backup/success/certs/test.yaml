@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: acme-intellatest-com-crt
+spec:
+  secretName: acme-intellatest-com-secret
+  duration: 2160h # 90d
+  renewBefore: 360h # 15d
+  dnsNames:
+  - lsnsoftinc.com
+  issuerRef:
+    name: letsencrypt-haproxy-cluster-dev
+    kind: ClusterIssuer
+    group: cert-manager.io

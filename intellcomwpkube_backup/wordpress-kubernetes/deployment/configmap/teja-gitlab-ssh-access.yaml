@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-gitlab-ssh-key
+data:
+  id_rsa: |
+    -----BEGIN OPENSSH PRIVATE KEY-----
+    b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+    QyNTUxOQAAACCL8hZ2Yd0PwUp8lrtwoOQ4VF1eJgkb1eVdxkHW5WMIrAAAAJhegIb9XoCG
+    /QAAAAtzc2gtZWQyNTUxOQAAACCL8hZ2Yd0PwUp8lrtwoOQ4VF1eJgkb1eVdxkHW5WMIrA
+    AAAEBZm5ViCAzRWwggrdLMSxB8+tHBVGvg+p8piwKpjPbCX4vyFnZh3Q/BSnyWu3Cg5DhU
+    XV4mCRvV5V3GQdblYwisAAAAEHRlamFkQGxzbnNvZnQuaW4BAgMEBQ==
+    -----END OPENSSH PRIVATE KEY-----
+  known_hosts: |
+    |1|1PXA1FmP819nDDTlYdx4th2IAT0=|ejhmCbLCOLrYEF+gyXQMJnb4/WI= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKNVBejU2IXp/peHo26mz1j4hP66PAfy0/ts6msU1TwvsU2bEJlldb7Cm1iAkFX95xoD5ux3duH0PrlQM7ZE7DQ=
+    |1|TxKtUW7bL4FtWQVF6ximtbghbAI=|iHKXlJAcEz7+fXZTFfnJrhyi+C0= ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBKNVBejU2IXp/peHo26mz1j4hP66PAfy0/ts6msU1TwvsU2bEJlldb7Cm1iAkFX95xoD5ux3duH0PrlQM7ZE7DQ=
+#kubectl create configmap wordpress-gitlab-ssh-key --from-file=teja-gitlab-intellasphere  --from-file=known_hosts
+

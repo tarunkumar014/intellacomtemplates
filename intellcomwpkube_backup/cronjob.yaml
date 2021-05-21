@@ -1,0 +1,22 @@
+
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: test 
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          imagePullSecrets:
+          - name: teja-azure-container-registry
+          restartPolicy: OnFailure
+
+          containers:
+          - name: cronintella
+            image: intellasphere.azurecr.io/cronjobintella:v3
+            command:
+            - /bin/sh
+            - chown -R www-data:www-data /var/www/html/*
+

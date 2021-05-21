@@ -1,0 +1,30 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: devintellcomtest
+ # namespace: intellasphere
+  annotations:
+    kubernetes.io/ingress.class: dev-haproxy
+    ingress.kubernetes.io/forwarded-for: "true"
+    #ingress.kubernetes.io/load-balance: "roundrobin"
+    #ingress.kubernetes.io/request-set-header: X-Forwarded-Proto "https"
+    ingress.kubernetes.io/cors-enable: "true"
+    #ingress.kubernetes.io/cors-allow-origin: "https://minio2.intellasphere.com, https://cdn.lsnsoftinc.com"
+    ingress.kubernetes.io/cors-allow-origin: "*"
+    ingress.kubernetes.io/cors-allow-methods: "*"
+    ingress.kubernetes.io/cors-allow-headers: "*"
+    ingress.kubernetes.io/cors-allow-credentials: "true"
+    ingress.kubernetes.io/cors-max-age: "86400"
+    #ingress.kubernetes.io/rewrite-target: /
+spec:
+  tls:
+  - hosts:
+      - lsnsoftinc.com
+    secretName: acme-intellatest-com-secret
+  rules:
+  - host: lsnsoftinc.com
+    http:
+      paths:
+      -  backend:
+          serviceName: nginx
+          servicePort: 80

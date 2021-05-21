@@ -1,0 +1,19 @@
+FROM wordpress:php7.4-fpm-alpine
+
+MAINTAINER tejavenkatesh <tejad@lsnsoft.com>
+
+RUN apk update && apk upgrade && \
+    apk add --no-cache bash git openssh
+
+RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer
+
+
+ADD   composer.json /var/www/composer.json
+
+COPY docker-entrypoint.sh /usr/local/bin/
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+
+CMD ["php-fpm"]
+
+
